@@ -1,0 +1,27 @@
+<div [ngStyle]= "{
+                    'background': config.background,
+                    'padding': '20px'
+
+                  }">
+  <h1>
+    Bienvenido a {{ config.title }}!
+  </h1>
+
+  <p>{{config.description}}</p>
+ </div>
+
+ <nav>
+
+ </nav>
+  <a [routerLink]= "['/']">Home</a>
+  &nbsp;
+  <a [routerLink]= "['/CrearEntrevistas']">Crear Entrevistas</a>
+ <div>
+
+  <!--button (click)= "oculatarCargarTiquetes(false)"  *ngIf="mostrar_cargarTiquetes">Ocultar Componente</button>-->
+  <!--button (click)= "oculatarCargarTiquetes(true)"  *ngIf="!mostrar_cargarTiquetes">Mostrar Componente</button>-->
+
+  <!--app-cargar-tiquetes *ngIf="mostrar_cargarTiquetes"></app-cargar-tiquetes>-->
+ </div>
+
+<router-outlet></router-outlet>

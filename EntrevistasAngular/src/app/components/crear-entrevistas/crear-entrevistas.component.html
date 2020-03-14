@@ -1,0 +1,65 @@
+<h2>{{title}}</h2>
+
+<div>
+  <label class="custom-control custom-radio">
+    <input id="radio1" name="radio" type="radio" class="custom-control-input" (change)="filtrarTecnologia('.Net')">
+    <span class="custom-control-indicator"></span> 
+    <span class="custom-control-description">Microsoft .Net</span>
+  </label>
+  <label class="custom-control custom-radio">
+    <input id="radio2" name="radio" type="radio" class="custom-control-input" (change)="filtrarTecnologia('Java')">
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">Oracle Java</span>
+  </label>
+</div>
+<br>
+<br>
+
+
+<div>
+  <select class="custom-select" (change)="filtrarUsuariosParImpar($event.target.value)">
+    <option *ngFor="let tecno of tecnoFilter" 
+            [ngValue]="tecno.Id" 
+            >
+      {{tecno.Descripcion}} 
+    </option>
+  </select>
+</div>
+
+<br>
+
+
+<table id="users">
+  <tr>
+    <th *ngFor="let column of headers"> 
+        {{column}}
+    </th>
+  </tr>
+
+  <tr *ngFor="let row of rows"> 
+    <td *ngFor="let column of headers">
+        {{row[column]}}
+    </td>
+  </tr>
+</table>
+
+<br>
+<br>
+<div>
+  <select class="custom-select">
+    <option *ngFor="let entrevista of tipoEntrevista" [ngValue]="entrevista">
+      {{entrevista}}
+    </option>
+  </select>
+</div>
+
+<div class="form-group">
+  
+ 
+</div>
+<br>
+<br>
+
+<button (click)="GuardarDatos()">Guardar Datos</button>
+
+<router-outlet></router-outlet>
